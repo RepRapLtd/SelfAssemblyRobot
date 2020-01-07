@@ -11,7 +11,7 @@
 #include <math.h>
 using namespace std;
 
-double zDepth = 0.0;
+double zDepth = -0.3;
 double safeHeight = 1.0;
 double rapidRate = 1000.0;
 double feedRate = 100.0;
@@ -43,9 +43,9 @@ void circle(double r)
 {
 	cout << "G1 X" << r << " Y0.0" << " F" << rapidRate << endl;
 	cout << "G1 Z" << zDepth << " F" << plungeRate << endl;
-	int polygon = (int)(0.5 + 30*r/10.0);
-	if(polygon < 10)
-		polygon = 10;
+	int polygon = (int)(0.5 + 60*r/10.0);
+	if(polygon < 20)
+		polygon = 20;
 	double aInc = M_PI*2.0/(double)polygon;
 	double a = 0.0;
 	for(int p = 0; p < polygon; p++)
